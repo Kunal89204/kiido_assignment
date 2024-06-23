@@ -18,6 +18,7 @@ const Bookmarks = () => {
                             color="white"
                             maxW="sm"
                             borderWidth="1px"
+                        borderColor={'gray.700'}
                             borderRadius="lg"
                             overflow="hidden"
                             m={4}
