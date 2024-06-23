@@ -1,6 +1,6 @@
 // Home.jsx
 import React, { useEffect } from 'react';
-import { Box, Flex, Image, VStack, Text, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import { Box, Flex, Image, VStack, Text, SkeletonCircle, SkeletonText, Alert, AlertIcon } from '@chakra-ui/react';
 import { fetchData } from '../redux/slices/fetch';
 import { addBookmark, removeBookmark } from '../redux/slices/bookmark';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,6 +23,8 @@ const Home = () => {
         }
     };
 
+
+    // A skeleton pre loader 
     if (state.fetch.isLoading) {
         return (
             <Box p={4} bg="gray.900" minH="100vh">
@@ -66,6 +68,12 @@ const Home = () => {
 
     return (
         <Box p={4} bg="gray.900" minH="100vh">
+            {state.fetch.isError && (
+                <Alert status="error" bg={'gray.700'} borderRadius={'5px'} color={'white'} mb={4}>
+                    <AlertIcon />
+                    {state.fetch.errorMessage}
+                </Alert>
+            )}
             <Flex wrap="wrap" justify="center">
                 {state.fetch.data && state.fetch.data.map((dat) => (
                     <Box
@@ -83,8 +91,8 @@ const Home = () => {
                     >
                         <Flex align="center" mb={4}>
                             <Image
-                                borderRadius="full"
-                                boxSize="50px"
+                          
+                                w={'100px'}
                                 src={dat.association.logo}
                                 alt={`${dat.association.name} logo`}
                                 mr={4}

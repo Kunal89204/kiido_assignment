@@ -12,21 +12,24 @@ const fetchSlice = createSlice({
         isLoading: false, 
         data: null,
         isError: false,
+        errorMessage: '',
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchData.pending, (state, action) => {
-            state.isLoading = true
+        builder.addCase(fetchData.pending, (state) => {
+            state.isLoading = true;
+            state.isError = false;
+            state.errorMessage = '';
         })
         builder.addCase(fetchData.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.data = action.payload
+            state.data = action.payload;
         })
-
         builder.addCase(fetchData.rejected, (state, action) => {
-            console.log('Error', action.payload)
-            state.isError = true
+            state.isLoading = false;
+            state.isError = true;
+            state.errorMessage = 'Failed to fetch data. Please try again later.';
         })
     }
 })
 
-export default fetchSlice.reducer
+export default fetchSlice.reducer;

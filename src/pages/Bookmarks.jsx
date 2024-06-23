@@ -10,6 +10,7 @@ const Bookmarks = () => {
         <Box p={4} bg="gray.900" minH="100vh">
             <Flex wrap="wrap" justify="center">
                 {bookmarks.length > 0 ? (
+                   
                     bookmarks.map((dat) => (
                         <Box
                             key={dat.id}
@@ -25,8 +26,7 @@ const Bookmarks = () => {
                         >
                             <Flex align="center" mb={4}>
                                 <Image
-                                    borderRadius="full"
-                                    boxSize="50px"
+                                    w={'100px'}
                                     src={dat.association.logo}
                                     alt={`${dat.association.name} logo`}
                                     mr={4}
