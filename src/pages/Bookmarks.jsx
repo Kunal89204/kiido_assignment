@@ -10,7 +10,7 @@ const Bookmarks = () => {
         <Box p={4} bg="gray.900" minH="100vh">
             <Flex wrap="wrap" justify="center">
                 {bookmarks.length > 0 ? (
-                   
+
                     bookmarks.map((dat) => (
                         <Box
                             key={dat.id}
@@ -18,7 +18,7 @@ const Bookmarks = () => {
                             color="white"
                             maxW="sm"
                             borderWidth="1px"
-                        borderColor={'gray.700'}
+                            borderColor={'gray.700'}
                             borderRadius="lg"
                             overflow="hidden"
                             m={4}

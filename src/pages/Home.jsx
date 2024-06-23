@@ -45,7 +45,7 @@ const Home = () => {
                             className="relative"
                         >
                             <Flex align="center" mb={4}>
-                                <SkeletonCircle size="50px" />
+                                <SkeletonCircle size="50px" borderRadius={'10px'}  w={'100px'} />
                                 <VStack align="start" ml={4} spacing={2}>
                                     <SkeletonText noOfLines={1} skeletonHeight="4" width="150px" />
                                     <SkeletonText noOfLines={1} skeletonHeight="4" width="100px" />
@@ -98,6 +98,7 @@ const Home = () => {
                                 src={dat.association.logo}
                                 alt={`${dat.association.name} logo`}
                                 mr={4}
+                                borderRadius={'3px'}
                             />
                             <VStack align="start">
                                 <Text fontWeight="bold" fontSize="xl">
