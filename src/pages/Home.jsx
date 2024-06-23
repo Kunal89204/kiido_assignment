@@ -82,6 +82,7 @@ const Home = () => {
                         color="white"
                         maxW="sm"
                         borderWidth="1px"
+                        borderColor={'gray.700'}
                         borderRadius="lg"
                         overflow="hidden"
                         m={4}
@@ -120,7 +121,7 @@ const Home = () => {
                                 </Text>{' '}
                                 {dat.first_name} {dat.last_name}
                             </Text>
-                            <Text>
+                            <Text wordBreak={'break-word'}>
                                 <Text as="span" fontWeight="bold">
                                     Email:
                                 </Text>{' '}
